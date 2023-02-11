@@ -26,7 +26,6 @@ for(const card of cards){
 
 /* 5: function click handler in a button */
 document.getElementById('btn-sold').addEventListener('click', function(){
-    console.log('sold')
     const sold = document.getElementById('sold');
     sold.innerText = 'You Bought this product';
     sold.style.color = 'red';
@@ -36,7 +35,25 @@ document.getElementById('btn-sold').addEventListener('click', function(){
 const buttons = document.getElementsByClassName('btn');
 for(const button of buttons){
     button.addEventListener('click', function(event){
-        console.log('im btn buy now');
         event.target.parentNode.remove(event.target);
     })
+}
+
+/* 7: disable/enable button */
+document.getElementById('text-field').addEventListener('keyup', function(event){
+    const getText = event.target.value;
+    const enableBtn = document.getElementById('btn-submit');
+    if(getText === 'email')
+        enableBtn.removeAttribute('disabled');
+        else
+        enableBtn.setAttribute('disabled', true);
+    });
+    
+    
+/* 8: change image on mouseenter */
+function newImg(event){
+    event.src = 'images/bags/bag-2.png';
+}
+function oldImg(event){
+    event.src = 'images/bags/bag-1.png';
 }
