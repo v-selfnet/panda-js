@@ -32,4 +32,11 @@ document.getElementById('btn-sold').addEventListener('click', function(){
     sold.style.color = 'red';
 });
 
-
+/* 6: function click handler remove button */
+const buttons = document.getElementsByClassName('btn');
+for(const button of buttons){
+    button.addEventListener('click', function(event){
+        console.log('im btn buy now');
+        event.target.parentNode.remove(event.target);
+    })
+}
